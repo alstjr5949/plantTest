@@ -13,9 +13,6 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   padding: 50px 20px;
-  & div {
-    margin-bottom: 40px;
-  }
 `;
 
 const Title = styled(motion.div)`
@@ -34,6 +31,7 @@ const Title = styled(motion.div)`
   padding: 0px 20px;
   font-size: 35px;
   text-align: center;
+  margin-bottom: 40px;
   & span {
     margin: 10px 0px;
     font-weight: 400;
@@ -53,11 +51,12 @@ const MainImg = styled.div`
   background-position: center center;
   background-size: cover;
   position: relative;
+  margin-bottom: 40px;
 `;
 
 const StartBtn = styled.div`
   width: 300px;
-  height: 80px;
+  height: 70px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -66,15 +65,43 @@ const StartBtn = styled.div`
   color: white;
   font-size: 25px;
   font-weight: 500;
+  margin-bottom: 60px;
   cursor: pointer;
 `;
 
 const ShareBtnContainer = styled.div`
   width: 450px;
-  height: 60px;
+  height: 55px;
+  display: flex;
+  align-items: center;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  margin-bottom: 20px;
+`;
+
+const ShareText = styled.div`
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-weight: 500;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+`;
+
+const ShareIconContainer = styled.div`
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const ShareIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
 `;
 
 const wrapperVariants = {
@@ -124,7 +151,14 @@ function Home() {
         <Link to="/test">
           <StartBtn>테스트 시작하기 &rarr;</StartBtn>
         </Link>
-        <ShareBtnContainer></ShareBtnContainer>
+        <ShareBtnContainer>
+          <ShareText>테스트 공유하기</ShareText>
+          <ShareIconContainer>
+            <ShareIcon></ShareIcon>
+            <ShareIcon></ShareIcon>
+            <ShareIcon></ShareIcon>
+          </ShareIconContainer>
+        </ShareBtnContainer>
       </Wrapper>
     </AnimatePresence>
   );
