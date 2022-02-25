@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import leaves from "../img/leaveFrame.png";
@@ -51,12 +51,12 @@ const MainImg = styled.div`
   background-position: center center;
   background-size: cover;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 `;
 
 const StartBtn = styled.div`
   width: 300px;
-  height: 70px;
+  height: 60px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -70,7 +70,7 @@ const StartBtn = styled.div`
 `;
 
 const ShareBtnContainer = styled.div`
-  width: 450px;
+  width: 400px;
   height: 55px;
   display: flex;
   align-items: center;
@@ -136,31 +136,29 @@ const titleVariants = {
 
 function Home() {
   return (
-    <AnimatePresence>
-      <Wrapper
-        variants={wrapperVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
-        <MainImg>
-          <Title variants={titleVariants} initial="initial" animate="animate">
-            <span>나와 어울리는</span> <span>식물찾기</span> <span>테스트</span>
-          </Title>
-        </MainImg>
-        <Link to="/test">
-          <StartBtn>테스트 시작하기 &rarr;</StartBtn>
-        </Link>
-        <ShareBtnContainer>
-          <ShareText>테스트 공유하기</ShareText>
-          <ShareIconContainer>
-            <ShareIcon></ShareIcon>
-            <ShareIcon></ShareIcon>
-            <ShareIcon></ShareIcon>
-          </ShareIconContainer>
-        </ShareBtnContainer>
-      </Wrapper>
-    </AnimatePresence>
+    <Wrapper
+      variants={wrapperVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <MainImg>
+        <Title variants={titleVariants} initial="initial" animate="animate">
+          <span>나와 어울리는</span> <span>식물찾기</span> <span>테스트</span>
+        </Title>
+      </MainImg>
+      <Link to="/test">
+        <StartBtn>테스트 시작하기</StartBtn>
+      </Link>
+      <ShareBtnContainer>
+        <ShareText>테스트 공유하기</ShareText>
+        <ShareIconContainer>
+          <ShareIcon></ShareIcon>
+          <ShareIcon></ShareIcon>
+          <ShareIcon></ShareIcon>
+        </ShareIconContainer>
+      </ShareBtnContainer>
+    </Wrapper>
   );
 }
 
