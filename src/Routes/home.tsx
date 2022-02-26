@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import leaves from "../img/leaveFrame.png";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
-  min-width: 500px;
   height: 90vh;
   min-height: 800px;
   display: flex;
@@ -16,10 +15,9 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Title = styled(motion.div)`
-  width: 300px;
+  width: 60%;
   min-width: 300px;
   height: 300px;
-  min-height: 300px;
   position: absolute;
   top: 80px;
   left: 0;
@@ -44,8 +42,7 @@ const Title = styled(motion.div)`
 `;
 
 const MainImg = styled.div`
-  width: 500px;
-  min-width: 400px;
+  width: 100%;
   height: 450px;
   background-image: url(${leaves});
   background-position: center center;
@@ -55,7 +52,7 @@ const MainImg = styled.div`
 `;
 
 const StartBtn = styled.div`
-  width: 300px;
+  width: 60%;
   height: 60px;
   border-radius: 50px;
   display: flex;
@@ -70,7 +67,7 @@ const StartBtn = styled.div`
 `;
 
 const ShareBtnContainer = styled.div`
-  width: 400px;
+  width: 80%;
   height: 55px;
   display: flex;
   align-items: center;
@@ -135,6 +132,10 @@ const titleVariants = {
 };
 
 function Home() {
+  const navigate = useNavigate();
+  const startBtnClick = () => {
+    navigate("/test");
+  };
   return (
     <Wrapper
       variants={wrapperVariants}
@@ -147,9 +148,7 @@ function Home() {
           <span>나와 어울리는</span> <span>식물찾기</span> <span>테스트</span>
         </Title>
       </MainImg>
-      <Link to="/test">
-        <StartBtn>테스트 시작하기</StartBtn>
-      </Link>
+      <StartBtn onClick={startBtnClick}>테스트 시작하기</StartBtn>
       <ShareBtnContainer>
         <ShareText>테스트 공유하기</ShareText>
         <ShareIconContainer>
