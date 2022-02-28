@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { question } from "../question";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -28,27 +30,54 @@ const BackHomeBtn = styled.div`
 `;
 
 const Question = styled.div`
-  width: 90%;
+  width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 30px;
+  justify-content: center;
+  font-size: 25px;
   font-weight: 500;
   margin-bottom: 40px;
+  & span {
+    margin-right: 10px;
+  }
 `;
 
-const Answer = styled.div`
-  width: 70%;
-  height: 60px;
+const FourAnswer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const FourAnswerBtn = styled(motion.div)`
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid black;
-  border-radius: 40px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 15px solid white;
+  border-radius: 50%;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    0px 0px 15px rgba(0, 0, 0, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 5px rgba(255, 255, 255, 1);
+  position: relative;
+  transition: 0.2s all ease-in;
   cursor: pointer;
+  &:hover {
+    border: 15px solid rgba(28, 183, 130, 1);
+  }
+  & span {
+    width: 100px;
+    position: absolute;
+    bottom: -50px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+  }
 `;
+
+const Answer = styled.div``;
 
 const wrapperVariants = {
   initial: {
@@ -69,21 +98,40 @@ const wrapperVariants = {
 };
 
 function Test() {
+  const [questionNum, setQuestionNum] = useState(1);
   const navigate = useNavigate();
   const backHomeBtnClick = () => {
     navigate("/");
   };
+  const btnClick = () => {
+    setQuestionNum((prev) => prev + 1);
+  };
   return (
     <Wrapper
+      key={questionNum}
       variants={wrapperVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <BackHomeBtn onClick={backHomeBtnClick}>&larr;</BackHomeBtn>
-      <Question>1. 질문을 길게 길게 길게 길게</Question>
-      <Answer>답변1</Answer>
-      <Answer>답변2</Answer>
+      <Question>
+        <span>{questionNum}.</span> {["question.questionNum"]}
+      </Question>
+      <FourAnswer>
+        <FourAnswerBtn onClick={btnClick}>
+          <span>전혀 그렇지 않다</span>
+        </FourAnswerBtn>
+        <FourAnswerBtn onClick={btnClick}>
+          <span>그렇지 않다</span>
+        </FourAnswerBtn>
+        <FourAnswerBtn onClick={btnClick}>
+          <span>그렇다</span>
+        </FourAnswerBtn>
+        <FourAnswerBtn onClick={btnClick}>
+          <span>매우 그렇다</span>
+        </FourAnswerBtn>
+      </FourAnswer>
     </Wrapper>
   );
 }
