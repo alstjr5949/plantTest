@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -47,6 +47,7 @@ const Answer = styled.div`
   margin-bottom: 20px;
   border: 1px solid black;
   border-radius: 40px;
+  cursor: pointer;
 `;
 
 const wrapperVariants = {

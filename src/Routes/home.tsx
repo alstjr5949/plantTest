@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import leaves from "../img/leaveFrame.png";
+import leaves from "../img/leaf.png";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -15,39 +15,34 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Title = styled(motion.div)`
-  width: 60%;
+  width: 80%;
   min-width: 300px;
-  height: 300px;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  right: 0;
-  margin: auto;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0px 20px;
   font-size: 35px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   & span {
     margin: 10px 0px;
     font-weight: 400;
     &:nth-child(2) {
       font-size: 45px;
       font-weight: 700;
-      color: #9ed5a2;
+      color: #a8c0a0;
     }
   }
 `;
 
 const MainImg = styled.div`
-  width: 100%;
-  height: 450px;
   background-image: url(${leaves});
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
-  position: relative;
+  width: 200px;
+  height: 200px;
   margin-bottom: 100px;
 `;
 
@@ -58,7 +53,7 @@ const StartBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #9ed5a2;
+  background-color: #a8c0a0;
   color: white;
   font-size: 25px;
   font-weight: 500;
@@ -74,7 +69,6 @@ const ShareBtnContainer = styled.div`
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin-bottom: 20px;
 `;
 
 const ShareText = styled.div`
@@ -143,11 +137,10 @@ function Home() {
       animate="animate"
       exit="exit"
     >
-      <MainImg>
-        <Title variants={titleVariants} initial="initial" animate="animate">
-          <span>나와 어울리는</span> <span>식물찾기</span> <span>테스트</span>
-        </Title>
-      </MainImg>
+      <Title variants={titleVariants} initial="initial" animate="animate">
+        <span>나와 어울리는</span> <span>식물찾기 테스트</span>
+      </Title>
+      <MainImg />
       <StartBtn onClick={startBtnClick}>테스트 시작하기</StartBtn>
       <ShareBtnContainer>
         <ShareText>테스트 공유하기</ShareText>
