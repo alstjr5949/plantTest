@@ -1,8 +1,10 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { question } from "../question";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -24,7 +26,7 @@ const BackHomeBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 35px;
   margin-top: 30px;
   cursor: pointer;
 `;
@@ -33,7 +35,7 @@ const Question = styled.div`
   width: 100%;
   height: 60px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   font-size: 25px;
   font-weight: 500;
@@ -77,7 +79,35 @@ const FourAnswerBtn = styled(motion.div)`
   }
 `;
 
-const Answer = styled.div``;
+const TwoAnswer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & div:first-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    &:hover {
+      color: rgba(28, 183, 130, 1);
+    }
+  }
+  & div:last-child {
+    &:hover {
+      color: red;
+    }
+  }
+`;
+
+const TwoBtn = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 800;
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+`;
 
 const wrapperVariants = {
   initial: {
@@ -86,7 +116,7 @@ const wrapperVariants = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 1.5,
+      duration: 1,
     },
   },
   exit: {
@@ -100,11 +130,13 @@ const wrapperVariants = {
 function Test() {
   const [questionNum, setQuestionNum] = useState(1);
   const navigate = useNavigate();
-  const backHomeBtnClick = () => {
-    navigate("/");
+  const backBtnClick = () => {
+    questionNum === 1 ? navigate("/") : setQuestionNum((prev) => prev - 1);
   };
   const btnClick = () => {
-    setQuestionNum((prev) => prev + 1);
+    questionNum === 26
+      ? navigate("/result")
+      : setQuestionNum((prev) => prev + 1);
   };
   return (
     <Wrapper
@@ -114,24 +146,33 @@ function Test() {
       animate="animate"
       exit="exit"
     >
-      <BackHomeBtn onClick={backHomeBtnClick}>&larr;</BackHomeBtn>
+      <BackHomeBtn onClick={backBtnClick}>
+        <FontAwesomeIcon icon={faAngleLeft} />
+      </BackHomeBtn>
       <Question>
-        <span>{questionNum}.</span> {["question.questionNum"]}
+        <span>{questionNum}.</span> {question[questionNum - 1]}
       </Question>
-      <FourAnswer>
-        <FourAnswerBtn onClick={btnClick}>
-          <span>전혀 그렇지 않다</span>
-        </FourAnswerBtn>
-        <FourAnswerBtn onClick={btnClick}>
-          <span>그렇지 않다</span>
-        </FourAnswerBtn>
-        <FourAnswerBtn onClick={btnClick}>
-          <span>그렇다</span>
-        </FourAnswerBtn>
-        <FourAnswerBtn onClick={btnClick}>
-          <span>매우 그렇다</span>
-        </FourAnswerBtn>
-      </FourAnswer>
+      {questionNum < 17 ? (
+        <FourAnswer>
+          <FourAnswerBtn onClick={btnClick}>
+            <span>전혀 그렇지 않다</span>
+          </FourAnswerBtn>
+          <FourAnswerBtn onClick={btnClick}>
+            <span>그렇지 않다</span>
+          </FourAnswerBtn>
+          <FourAnswerBtn onClick={btnClick}>
+            <span>그렇다</span>
+          </FourAnswerBtn>
+          <FourAnswerBtn onClick={btnClick}>
+            <span>매우 그렇다</span>
+          </FourAnswerBtn>
+        </FourAnswer>
+      ) : (
+        <TwoAnswer>
+          <TwoBtn onClick={btnClick}>O</TwoBtn>
+          <TwoBtn onClick={btnClick}>X</TwoBtn>
+        </TwoAnswer>
+      )}
     </Wrapper>
   );
 }

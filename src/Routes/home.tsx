@@ -102,7 +102,7 @@ const wrapperVariants = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 1.5,
+      duration: 1,
     },
   },
   exit: {
@@ -120,7 +120,7 @@ const titleVariants = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 3,
+      duration: 2,
     },
   },
 };
