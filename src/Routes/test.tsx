@@ -14,7 +14,7 @@ const Wrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 20px;
+  padding: 50px 20px;
 `;
 
 const BackHomeBtn = styled.div`
@@ -110,7 +110,7 @@ const wrapperVariants = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
   exit: {

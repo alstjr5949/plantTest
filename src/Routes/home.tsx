@@ -61,8 +61,16 @@ const MainImg = styled.div`
   background-position: center center;
   width: 200px;
   height: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   filter: brightness(1.2);
+`;
+
+const Hashtag = styled.div`
+  width: 80%;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
 `;
 
 const StartBtn = styled.div`
@@ -167,6 +175,12 @@ function Home() {
         <span>테스트</span>
       </Title>
       <MainImg />
+      <Hashtag>
+        <span>#반려식물</span>
+        <span>#공기정화</span>
+        <span>#플랜테리어</span>
+        <span>#힐링</span>
+      </Hashtag>
       <StartBtn onClick={startBtnClick}>테스트 시작하기</StartBtn>
       <ShareBtnContainer>
         <ShareText>테스트 공유하기</ShareText>

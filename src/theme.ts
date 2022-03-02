@@ -9,6 +9,6 @@ export const theme: DefaultTheme = {
   desktop: `(min-width: ${size.desktop})`,
   laptop: `(max-width: ${size.laptop})`,
   color: {
-    green: "#ABCF49",
+    green: "#0ABF04",
   },
 };
