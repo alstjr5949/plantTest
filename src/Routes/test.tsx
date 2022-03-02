@@ -38,8 +38,8 @@ const Question = styled.div`
   align-items: flex-start;
   justify-content: center;
   font-size: 25px;
-  font-weight: 500;
-  margin-bottom: 40px;
+  font-weight: 600;
+  margin: 60px 0px;
   & span {
     margin-right: 10px;
   }
@@ -55,27 +55,25 @@ const FourAnswer = styled.div`
 const FourAnswerBtn = styled(motion.div)`
   display: flex;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: white;
-  border: 15px solid white;
+  border: 18px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
-    0px 0px 15px rgba(0, 0, 0, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.1),
-    inset -1px -1px 5px rgba(255, 255, 255, 1);
   position: relative;
   transition: 0.2s all ease-in;
   cursor: pointer;
   &:hover {
-    border: 15px solid rgba(28, 183, 130, 1);
+    border: 18px solid rgba(28, 183, 130, 1);
   }
   & span {
-    width: 100px;
+    width: 110px;
     position: absolute;
     bottom: -50px;
     font-size: 14px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
   }
 `;
 
@@ -107,6 +105,18 @@ const TwoBtn = styled.div`
   font-weight: 800;
   transition: 0.3s all ease-in-out;
   cursor: pointer;
+`;
+
+const Emoji = styled.div`
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Toss Face Font Mac", sans-serif;
+  font-size: 100px;
+  position: absolute;
+  top: 100px;
 `;
 
 const wrapperVariants = {
@@ -149,6 +159,7 @@ function Test() {
       <BackHomeBtn onClick={backBtnClick}>
         <FontAwesomeIcon icon={faAngleLeft} />
       </BackHomeBtn>
+      <Emoji>🌿</Emoji>
       <Question>
         <span>{questionNum}.</span> {question[questionNum - 1]}
       </Question>

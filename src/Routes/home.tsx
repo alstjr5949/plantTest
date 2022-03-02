@@ -93,6 +93,9 @@ const ShareIcon = styled.div`
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const wrapperVariants = {
