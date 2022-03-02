@@ -107,18 +107,6 @@ const TwoBtn = styled.div`
   cursor: pointer;
 `;
 
-const Emoji = styled.div`
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Toss Face Font Mac", sans-serif;
-  font-size: 100px;
-  position: absolute;
-  top: 100px;
-`;
-
 const wrapperVariants = {
   initial: {
     opacity: 0,
@@ -159,7 +147,6 @@ function Test() {
       <BackHomeBtn onClick={backBtnClick}>
         <FontAwesomeIcon icon={faAngleLeft} />
       </BackHomeBtn>
-      <Emoji>🌿</Emoji>
       <Question>
         <span>{questionNum}.</span> {question[questionNum - 1]}
       </Question>
