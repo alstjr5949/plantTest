@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import leaves from "../img/leaf.png";
+import leaves from "../img/sprout.png";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -28,10 +28,28 @@ const Title = styled(motion.div)`
   & span {
     margin: 10px 0px;
     font-weight: 400;
+    &:first-child {
+      font-size: 28px;
+      & span {
+        font-size: 28px;
+        color: ${(props) => props.theme.color.green};
+      }
+    }
     &:nth-child(2) {
       font-size: 45px;
       font-weight: 700;
-      color: #a8c0a0;
+      background: linear-gradient(
+        to right,
+        #cee166,
+        ${(props) => props.theme.color.green}
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &:last-child {
+      font-size: 40px;
+      font-weight: 400;
+      color: black;
     }
   }
 `;
@@ -44,6 +62,7 @@ const MainImg = styled.div`
   width: 200px;
   height: 200px;
   margin-bottom: 100px;
+  filter: brightness(1.2);
 `;
 
 const StartBtn = styled.div`
@@ -53,7 +72,7 @@ const StartBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #a8c0a0;
+  background-color: ${(props) => props.theme.color.green};
   color: white;
   font-size: 25px;
   font-weight: 500;
@@ -141,7 +160,11 @@ function Home() {
       exit="exit"
     >
       <Title variants={titleVariants} initial="initial" animate="animate">
-        <span>나와 어울리는</span> <span>식물찾기 테스트</span>
+        <span>
+          일상 속 <span>싱그러움</span>을 찾아서,
+        </span>{" "}
+        <span>초록 MATE</span>
+        <span>테스트</span>
       </Title>
       <MainImg />
       <StartBtn onClick={startBtnClick}>테스트 시작하기</StartBtn>

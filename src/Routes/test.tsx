@@ -18,6 +18,7 @@ const Wrapper = styled(motion.div)`
 `;
 
 const BackHomeBtn = styled.div`
+  color: rgba(0, 0, 0, 0.8);
   position: absolute;
   top: 0;
   left: 0;
@@ -39,7 +40,7 @@ const Question = styled.div`
   justify-content: center;
   font-size: 25px;
   font-weight: 600;
-  margin: 60px 0px;
+  margin-bottom: 50px;
   & span {
     margin-right: 10px;
   }
@@ -64,7 +65,7 @@ const FourAnswerBtn = styled(motion.div)`
   transition: 0.2s all ease-in;
   cursor: pointer;
   &:hover {
-    border: 18px solid rgba(28, 183, 130, 1);
+    border: 18px solid ${(props) => props.theme.color.green};
   }
   & span {
     width: 110px;
@@ -81,30 +82,25 @@ const TwoAnswer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  & div:first-child {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-    &:hover {
-      color: rgba(28, 183, 130, 1);
-    }
-  }
-  & div:last-child {
-    &:hover {
-      color: red;
-    }
-  }
+  justify-content: space-around;
 `;
 
-const TwoBtn = styled.div`
+const ProgressNum = styled.div`
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  font-weight: 800;
-  transition: 0.3s all ease-in-out;
-  cursor: pointer;
+  align-items: flex-end;
+  margin-bottom: 30px;
+  & span:first-child {
+    padding-right: 5px;
+    font-size: 25px;
+    font-weight: 500;
+    color: ${(props) => props.theme.color.green};
+  }
+  & span:last-child {
+    color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 1px;
+  }
 `;
 
 const wrapperVariants = {
@@ -147,6 +143,10 @@ function Test() {
       <BackHomeBtn onClick={backBtnClick}>
         <FontAwesomeIcon icon={faAngleLeft} />
       </BackHomeBtn>
+      <ProgressNum>
+        <span>{String(questionNum).padStart(2, "0")}</span>
+        <span>/ 26</span>
+      </ProgressNum>
       <Question>
         <span>{questionNum}.</span> {question[questionNum - 1]}
       </Question>
@@ -167,8 +167,12 @@ function Test() {
         </FourAnswer>
       ) : (
         <TwoAnswer>
-          <TwoBtn onClick={btnClick}>O</TwoBtn>
-          <TwoBtn onClick={btnClick}>X</TwoBtn>
+          <FourAnswerBtn onClick={btnClick}>
+            <span>그렇다</span>
+          </FourAnswerBtn>
+          <FourAnswerBtn onClick={btnClick}>
+            <span>그렇지 않다</span>
+          </FourAnswerBtn>
         </TwoAnswer>
       )}
     </Wrapper>
