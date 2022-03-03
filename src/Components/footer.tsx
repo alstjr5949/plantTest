@@ -3,18 +3,18 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 500px;
+  width: 100%;
 `;
 
 const FooterBox = styled.div`
-  width: 500px;
+  width: 100%;
   height: 100px;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   font-weight: 500;
   display: flex;
-  position: fixed;
+  position: absolute;
   bottom: 0;
 `;
 

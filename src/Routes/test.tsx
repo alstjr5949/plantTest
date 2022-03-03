@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { question } from "../question";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../Components/footer";
+import { useRecoilState } from "recoil";
+import { questionIndexAtom } from "../atoms";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +53,7 @@ const FourAnswer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 100px;
 `;
 
 const FourAnswerBtn = styled(motion.div)`
@@ -83,6 +86,7 @@ const TwoAnswer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 100px;
 `;
 
 const ProgressNum = styled.div`
@@ -122,7 +126,7 @@ const wrapperVariants = {
 };
 
 function Test() {
-  const [questionNum, setQuestionNum] = useState(1);
+  const [questionNum, setQuestionNum] = useRecoilState(questionIndexAtom);
   const navigate = useNavigate();
   const backBtnClick = () => {
     questionNum === 1 ? navigate("/") : setQuestionNum((prev) => prev - 1);
@@ -175,6 +179,7 @@ function Test() {
           </FourAnswerBtn>
         </TwoAnswer>
       )}
+      <Footer />
     </Wrapper>
   );
 }

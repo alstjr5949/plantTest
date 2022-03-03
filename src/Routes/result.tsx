@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
+import { questionIndexAtom } from "../atoms";
+import Footer from "../Components/footer";
 import tree from "../img/tree.png";
 
 const Wrapper = styled.div`
@@ -59,7 +63,7 @@ const ResultContent = styled.li`
   &::before {
     content: "🌱";
     font-family: "Toss Face Font Mac", sans-serif;
-    margin-right: 5px;
+    margin-right: 8px;
   }
 `;
 
@@ -67,7 +71,7 @@ const BtnBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 70px;
 `;
 
 const RestartBtn = styled.div`
@@ -75,16 +79,26 @@ const RestartBtn = styled.div`
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 80px;
+  height: 60px;
   border-radius: 40px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
-  background-color: ${(props) => props.theme.color.green};
+  background: linear-gradient(
+    to right,
+    #cee166,
+    ${(props) => props.theme.color.green}
+  );
   color: white;
   cursor: pointer;
 `;
 
 function Result() {
+  const navigate = useNavigate();
+  const setQuestionNum = useSetRecoilState(questionIndexAtom);
+  const restartBtnClick = () => {
+    setQuestionNum(1);
+    navigate("/");
+  };
   return (
     <Wrapper>
       <ResultTitle>
@@ -121,8 +135,9 @@ function Result() {
         </ResultContent>
       </ResultContentBox>
       <BtnBox>
-        <RestartBtn>테스트 다시하기</RestartBtn>
+        <RestartBtn onClick={restartBtnClick}>테스트 다시하기</RestartBtn>
       </BtnBox>
+      <Footer />
     </Wrapper>
   );
 }

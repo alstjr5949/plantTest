@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Footer from "../Components/footer";
 import leaves from "../img/sprout.png";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
-  height: 90vh;
+  height: 100vh;
   min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 50px 20px;
+  position: relative;
 `;
 
 const Title = styled(motion.div)`
@@ -80,11 +82,15 @@ const StartBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.color.green};
+  background: linear-gradient(
+    to right,
+    #cee166,
+    ${(props) => props.theme.color.green}
+  );
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   cursor: pointer;
 `;
 
@@ -96,6 +102,7 @@ const ShareBtnContainer = styled.div`
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  margin-bottom: 60px;
 `;
 
 const ShareText = styled.div`
@@ -190,6 +197,7 @@ function Home() {
           <ShareIcon></ShareIcon>
         </ShareIconContainer>
       </ShareBtnContainer>
+      <Footer />
     </Wrapper>
   );
 }
