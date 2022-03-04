@@ -6,7 +6,7 @@ const size = {
   IpadPro: "1366px",
   Ipad: "1024px",
   Iphone: "767px",
-  IphoneX: "413px",
+  IphoneX: "414px",
   mobile: "375px",
 };
 

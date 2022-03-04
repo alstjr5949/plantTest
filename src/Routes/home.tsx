@@ -7,12 +7,17 @@ import leaves from "../img/sprout.png";
 const Wrapper = styled(motion.div)`
   width: 500px;
   height: 100vh;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 50px 20px;
   position: relative;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 const Title = styled(motion.div)`
@@ -23,7 +28,6 @@ const Title = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   padding: 0px 20px;
-  font-size: 35px;
   text-align: center;
   margin-bottom: 20px;
   & span {
@@ -53,6 +57,14 @@ const Title = styled(motion.div)`
       color: black;
     }
   }
+  @media ${(props) => props.theme.IphoneX} {
+    & span:first-child {
+      font-size: 20px;
+      & span {
+        font-size: 20px;
+      }
+    }
+  }
 `;
 
 const MainImg = styled.div`
@@ -72,6 +84,10 @@ const Hashtag = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    font-size: 15px;
+  }
 `;
 
 const StartBtn = styled.div`
@@ -91,6 +107,10 @@ const StartBtn = styled.div`
   font-weight: 500;
   margin-bottom: 30px;
   cursor: pointer;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 80%;
+    font-size: 18px;
+  }
 `;
 
 const ShareBtnContainer = styled.div`
@@ -100,8 +120,12 @@ const ShareBtnContainer = styled.div`
   align-items: center;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  border-radius: 15px;
   margin-bottom: 60px;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    font-size: 15px;
+  }
 `;
 
 const ShareText = styled.div`

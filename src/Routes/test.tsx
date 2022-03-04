@@ -17,6 +17,9 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   position: relative;
   padding: 50px 20px;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+  }
 `;
 
 const BackHomeBtn = styled.div`

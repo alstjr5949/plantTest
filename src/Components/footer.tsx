@@ -16,6 +16,11 @@ const FooterBox = styled.div`
   display: flex;
   position: absolute;
   bottom: 0;
+  color: rgba(0, 0, 0, 0.5);
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    font-size: 14px;
+  }
 `;
 
 function Footer() {
