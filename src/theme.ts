@@ -20,5 +20,6 @@ export const theme: DefaultTheme = {
   mobile: `(max-width: ${size.mobile})`,
   color: {
     green: "#0ABF04",
+    brown: "#966254",
   },
 };

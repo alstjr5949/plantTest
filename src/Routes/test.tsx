@@ -18,7 +18,7 @@ const Wrapper = styled(motion.div)`
   position: relative;
   padding: 50px 20px;
   @media ${(props) => props.theme.IphoneX} {
-    width: 100%;
+    width: 100vw;
   }
 `;
 
@@ -35,6 +35,9 @@ const BackHomeBtn = styled.div`
   font-size: 35px;
   margin-top: 30px;
   cursor: pointer;
+  @media ${(props) => props.theme.IphoneX} {
+    font-size: 25px;
+  }
 `;
 
 const Question = styled.div`
@@ -49,13 +52,17 @@ const Question = styled.div`
   & span {
     margin-right: 10px;
   }
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    font-size: 20px;
+  }
 `;
 
 const FourAnswer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 100px;
 `;
 
@@ -71,16 +78,27 @@ const FourAnswerBtn = styled(motion.div)`
   transition: 0.2s all ease-in;
   cursor: pointer;
   &:hover {
-    border: 18px solid ${(props) => props.theme.color.green};
+    border: 18px solid ${(props) => props.theme.color.brown};
   }
   & span {
-    width: 110px;
+    width: 100px;
     position: absolute;
     bottom: -50px;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
+  }
+  @media ${(props) => props.theme.IphoneX} {
+    width: 50px;
+    height: 50px;
+    border: 15px solid rgba(0, 0, 0, 0.1);
+    & span {
+      font-size: 11px;
+    }
+    &:hover {
+      border: 15px solid ${(props) => props.theme.color.brown};
+    }
   }
 `;
 

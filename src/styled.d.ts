@@ -11,6 +11,7 @@ declare module "styled-components" {
     mobile: string;
     color: {
       green: string;
+      brown: string;
     };
   }
 }

@@ -8,15 +8,21 @@ import tree from "../img/tree.png";
 const Wrapper = styled.div`
   width: 500px;
   height: 170vh;
+  min-height: 1450px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
   padding: 50px 20px;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    height: 180vh;
+  }
 `;
 
 const ResultTitle = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 25px;
@@ -28,6 +34,12 @@ const ResultTitle = styled.div`
     color: ${(props) => props.theme.color.green};
     margin-top: 10px;
   }
+  @media ${(props) => props.theme.IphoneX} {
+    font-size: 25px;
+    & span:nth-child(2) {
+      font-size: 40px;
+    }
+  }
 `;
 
 const ResultImg = styled.div`
@@ -38,6 +50,10 @@ const ResultImg = styled.div`
   width: 450px;
   height: 450px;
   filter: brightness(1.3);
+  @media ${(props) => props.theme.IphoneX} {
+    width: 350px;
+    height: 350px;
+  }
 `;
 
 const ResultSubTitle = styled.div`
@@ -48,6 +64,9 @@ const ResultSubTitle = styled.div`
   font-weight: 500;
   & span {
     font-family: "Toss Face Font Mac", sans-serif;
+  }
+  @media ${(props) => props.theme.IphoneX} {
+    font-size: 25px;
   }
 `;
 
@@ -65,6 +84,9 @@ const ResultContent = styled.li`
     font-family: "Toss Face Font Mac", sans-serif;
     margin-right: 8px;
   }
+  @media ${(props) => props.theme.IphoneX} {
+    font-size: 15px;
+  }
 `;
 
 const BtnBox = styled.div`
@@ -72,6 +94,9 @@ const BtnBox = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 70px;
+  @media ${(props) => props.theme.IphoneX} {
+    margin-top: 50px;
+  }
 `;
 
 const RestartBtn = styled.div`

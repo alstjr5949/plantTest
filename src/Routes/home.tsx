@@ -79,11 +79,12 @@ const MainImg = styled.div`
 `;
 
 const Hashtag = styled.div`
-  width: 80%;
-  color: rgba(0, 0, 0, 0.5);
+  width: 85%;
+  color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
+  font-size: 20px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
     font-size: 15px;
@@ -200,7 +201,7 @@ function Home() {
       <Title variants={titleVariants} initial="initial" animate="animate">
         <span>
           일상 속 <span>싱그러움</span>을 찾아서,
-        </span>{" "}
+        </span>
         <span>초록 MATE</span>
         <span>테스트</span>
       </Title>
