@@ -7,7 +7,6 @@ import leaves from "../img/sprout.png";
 const Wrapper = styled(motion.div)`
   width: 500px;
   height: 100vh;
-  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
