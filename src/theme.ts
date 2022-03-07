@@ -19,7 +19,8 @@ export const theme: DefaultTheme = {
   IphoneX: `(max-width: ${size.IphoneX})`,
   mobile: `(max-width: ${size.mobile})`,
   color: {
-    green: "#0ABF04",
+    green: "#1ac914",
     brown: "#966254",
+    purple: "#C08BFD",
   },
 };

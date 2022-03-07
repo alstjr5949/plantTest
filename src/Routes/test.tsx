@@ -62,29 +62,29 @@ const FourAnswer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 100px;
 `;
 
 const FourAnswerBtn = styled(motion.div)`
   display: flex;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background: white;
-  border: 18px solid rgba(0, 0, 0, 0.1);
+  border: 15px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   position: relative;
   transition: 0.2s all ease-in;
   cursor: pointer;
   &:hover {
-    border: 18px solid ${(props) => props.theme.color.brown};
+    border: 15px solid ${(props) => props.theme.color.purple};
   }
   & span {
-    width: 100px;
+    width: 120px;
     position: absolute;
     bottom: -50px;
-    font-size: 13px;
+    font-size: 16px;
     text-align: center;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
@@ -95,9 +95,6 @@ const FourAnswerBtn = styled(motion.div)`
     border: 15px solid rgba(0, 0, 0, 0.1);
     & span {
       font-size: 11px;
-    }
-    &:hover {
-      border: 15px solid ${(props) => props.theme.color.brown};
     }
   }
 `;

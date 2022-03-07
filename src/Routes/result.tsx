@@ -7,7 +7,7 @@ import tree from "../img/tree.png";
 
 const Wrapper = styled.div`
   width: 500px;
-  height: 170vh;
+  height: 180vh;
   min-height: 1450px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   padding: 50px 20px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
-    height: 180vh;
+    height: 1500px;
   }
 `;
 
@@ -25,12 +25,12 @@ const ResultTitle = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
+  margin: 0px 12.5px;
   font-size: 30px;
   margin-bottom: 50px;
   & span:nth-child(2) {
     font-size: 45px;
-    font-weight: 500;
+    font-weight: 800;
     color: ${(props) => props.theme.color.green};
     margin-top: 10px;
   }
@@ -56,15 +56,22 @@ const ResultImg = styled.div`
   }
 `;
 
+const ResultSub = styled.div`
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+  }
+`;
+
 const ResultSubTitle = styled.div`
   width: 100%;
   padding: 0px 25px;
   font-size: 30px;
-  margin-top: 50px;
   font-weight: 500;
-  & span {
-    font-family: "Toss Face Font Mac", sans-serif;
-  }
   @media ${(props) => props.theme.IphoneX} {
     font-size: 25px;
   }
@@ -77,11 +84,11 @@ const ResultContentBox = styled.ul`
 `;
 
 const ResultContent = styled.li`
+  width: 100%;
   margin-bottom: 20px;
   font-size: 18px;
   &::before {
     content: "🌱";
-    font-family: "Toss Face Font Mac", sans-serif;
     margin-right: 8px;
   }
   @media ${(props) => props.theme.IphoneX} {
@@ -131,34 +138,38 @@ function Result() {
         <span>'엄근진 나무'</span>
       </ResultTitle>
       <ResultImg></ResultImg>
-      <ResultSubTitle>
-        특징<span>🪴</span>
-      </ResultSubTitle>
-      <ResultContentBox>
-        <ResultContent>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        </ResultContent>
-        <ResultContent>A esse eveniet nihil quos quam sit?</ResultContent>
-        <ResultContent>Fugiat delectus esse nesciunt tempora</ResultContent>
-        <ResultContent>
-          a velit placeat! Temporibus animi mollitia aut exercitationem magnam
-          officiis.
-        </ResultContent>
-      </ResultContentBox>
-      <ResultSubTitle>
-        키우는 법<span>🪴</span>
-      </ResultSubTitle>
-      <ResultContentBox>
-        <ResultContent>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        </ResultContent>
-        <ResultContent>A esse eveniet nihil quos quam sit?</ResultContent>
-        <ResultContent>Fugiat delectus esse nesciunt tempora</ResultContent>
-        <ResultContent>
-          a velit placeat! Temporibus animi mollitia aut exercitationem magnam
-          officiis.
-        </ResultContent>
-      </ResultContentBox>
+      <ResultSub>
+        <ResultSubTitle>
+          특징<span>🪴</span>
+        </ResultSubTitle>
+        <ResultContentBox>
+          <ResultContent>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          </ResultContent>
+          <ResultContent>A esse eveniet nihil quos quam sit?</ResultContent>
+          <ResultContent>Fugiat delectus esse nesciunt tempora</ResultContent>
+          <ResultContent>
+            a velit placeat! Temporibus animi mollitia aut exercitationem magnam
+            officiis.
+          </ResultContent>
+        </ResultContentBox>
+      </ResultSub>
+      <ResultSub>
+        <ResultSubTitle>
+          키우는 법<span>🪴</span>
+        </ResultSubTitle>
+        <ResultContentBox>
+          <ResultContent>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          </ResultContent>
+          <ResultContent>A esse eveniet nihil quos quam sit?</ResultContent>
+          <ResultContent>Fugiat delectus esse nesciunt tempora</ResultContent>
+          <ResultContent>
+            a velit placeat! Temporibus animi mollitia aut exercitationem magnam
+            officiis.
+          </ResultContent>
+        </ResultContentBox>
+      </ResultSub>
       <BtnBox>
         <RestartBtn onClick={restartBtnClick}>테스트 다시하기</RestartBtn>
       </BtnBox>

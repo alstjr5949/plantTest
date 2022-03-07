@@ -12,6 +12,7 @@ declare module "styled-components" {
     color: {
       green: string;
       brown: string;
+      purple: string;
     };
   }
 }
