@@ -2,7 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 const size = {
   desktop: "1700px",
-  laptop: "1440px",
+  laptop: "761px",
   IpadPro: "1366px",
   Ipad: "1024px",
   Iphone: "767px",
@@ -12,7 +12,7 @@ const size = {
 
 export const theme: DefaultTheme = {
   desktop: `(min-width: ${size.desktop})`,
-  laptop: `(max-width: ${size.laptop})`,
+  laptop: `(min-width: ${size.laptop})`,
   IpadPro: `(max-width: ${size.IpadPro})`,
   Ipad: `(max-width: ${size.Ipad})`,
   Iphone: `(max-width: ${size.Iphone})`,

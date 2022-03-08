@@ -7,8 +7,9 @@ import tree from "../img/tree.png";
 
 const Wrapper = styled.div`
   width: 500px;
+  min-width: 400px;
   height: 190vh;
-  min-height: 1450px;
+  min-height: 1600px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
