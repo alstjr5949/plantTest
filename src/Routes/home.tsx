@@ -18,6 +18,10 @@ const Wrapper = styled(motion.div)`
     width: 100%;
     height: 100vh;
   }
+  @media ${(props) => props.theme.laptop} {
+    width: 500px;
+    height: 110vh;
+  }
 `;
 
 const Title = styled(motion.div)`

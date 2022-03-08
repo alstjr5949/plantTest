@@ -79,6 +79,9 @@ const FourAnswerBtn = styled(motion.div)`
   cursor: pointer;
   &:hover {
     border: 15px solid ${(props) => props.theme.color.purple};
+    span {
+      color: black;
+    }
   }
   & span {
     width: 120px;
@@ -86,8 +89,11 @@ const FourAnswerBtn = styled(motion.div)`
     bottom: -50px;
     font-size: 16px;
     text-align: center;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    &:hover {
+      color: black;
+    }
   }
   @media ${(props) => props.theme.IphoneX} {
     width: 50px;
@@ -190,10 +196,10 @@ function Test() {
       ) : (
         <TwoAnswer>
           <FourAnswerBtn onClick={btnClick}>
-            <span>그렇다</span>
+            <span>그렇지 않다</span>
           </FourAnswerBtn>
           <FourAnswerBtn onClick={btnClick}>
-            <span>그렇지 않다</span>
+            <span>그렇다</span>
           </FourAnswerBtn>
         </TwoAnswer>
       )}

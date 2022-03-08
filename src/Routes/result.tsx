@@ -7,7 +7,7 @@ import tree from "../img/tree.png";
 
 const Wrapper = styled.div`
   width: 500px;
-  height: 180vh;
+  height: 190vh;
   min-height: 1450px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,11 @@ const Wrapper = styled.div`
   padding: 50px 20px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
-    height: 1500px;
+    height: 1600px;
+  }
+  @media ${(props) => props.theme.laptop} {
+    width: 500px;
+    height: 1800px;
   }
 `;
 
@@ -47,6 +51,7 @@ const ResultImg = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  margin: 0 auto;
   width: 450px;
   height: 450px;
   filter: brightness(1.3);
@@ -57,8 +62,8 @@ const ResultImg = styled.div`
 `;
 
 const ResultSub = styled.div`
-  margin-top: 30px;
-  padding: 20px;
+  margin-top: 40px;
+  padding: 40px 20px;
   border-radius: 20px;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
