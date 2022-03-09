@@ -66,8 +66,7 @@ const ResultSub = styled.div`
   margin-top: 40px;
   padding: 40px 20px;
   border-radius: 20px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgba(150, 98, 84, 0.15) 0px 0px 0px 1px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
   }
@@ -120,7 +119,7 @@ const RestartBtn = styled.div`
   height: 60px;
   border-radius: 40px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   background: linear-gradient(
     to right,
     #cee166,

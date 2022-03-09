@@ -109,7 +109,7 @@ const StartBtn = styled.div`
   );
   color: white;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 30px;
   cursor: pointer;
   @media ${(props) => props.theme.IphoneX} {

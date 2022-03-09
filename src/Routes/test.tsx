@@ -87,7 +87,7 @@ const FourAnswerBtn = styled(motion.div)`
     width: 120px;
     position: absolute;
     bottom: -50px;
-    font-size: 16px;
+    font-size: 17px;
     text-align: center;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.5);
@@ -181,10 +181,10 @@ function Test() {
       {questionNum < 17 ? (
         <FourAnswer>
           <FourAnswerBtn onClick={btnClick}>
-            <span>전혀 그렇지 않다</span>
+            <span>전혀 아니다</span>
           </FourAnswerBtn>
           <FourAnswerBtn onClick={btnClick}>
-            <span>그렇지 않다</span>
+            <span>아니다</span>
           </FourAnswerBtn>
           <FourAnswerBtn onClick={btnClick}>
             <span>그렇다</span>
@@ -196,7 +196,7 @@ function Test() {
       ) : (
         <TwoAnswer>
           <FourAnswerBtn onClick={btnClick}>
-            <span>그렇지 않다</span>
+            <span>아니다</span>
           </FourAnswerBtn>
           <FourAnswerBtn onClick={btnClick}>
             <span>그렇다</span>
