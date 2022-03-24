@@ -20,7 +20,7 @@ const Wrapper = styled(motion.div)`
   }
   @media ${(props) => props.theme.laptop} {
     width: 500px;
-    height: 110vh;
+    height: 100vh;
   }
 `;
 

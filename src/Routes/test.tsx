@@ -58,15 +58,38 @@ const Question = styled.div`
   }
 `;
 
-const FourAnswer = styled.div`
+const ThreeAnswer = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 100px;
 `;
 
-const FourAnswerBtn = styled(motion.div)`
+const ThreeAnswerBtn = styled(motion.div)`
+  width: 100%;
+  height: 60px;
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover {
+    background-color: ${(props) => props.theme.color.purple};
+    color: white;
+    border: 1px solid ${(props) => props.theme.color.purple};
+  }
+  @media ${(props) => props.theme.IphoneX} {
+    width: 350px;
+    font-size: 16px;
+  }
+`;
+
+const TwoAnswerBtn = styled(motion.div)`
   display: flex;
   justify-content: center;
   width: 60px;
@@ -96,11 +119,11 @@ const FourAnswerBtn = styled(motion.div)`
     }
   }
   @media ${(props) => props.theme.IphoneX} {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: 15px solid rgba(0, 0, 0, 0.1);
     & span {
-      font-size: 11px;
+      font-size: 15px;
     }
   }
 `;
@@ -156,7 +179,7 @@ function Test() {
     questionNum === 1 ? navigate("/") : setQuestionNum((prev) => prev - 1);
   };
   const btnClick = () => {
-    questionNum === 26
+    questionNum === 15
       ? navigate("/result")
       : setQuestionNum((prev) => prev + 1);
   };
@@ -173,34 +196,27 @@ function Test() {
       </BackHomeBtn>
       <ProgressNum>
         <span>{String(questionNum).padStart(2, "0")}</span>
-        <span>/ 26</span>
+        <span>/ 15</span>
       </ProgressNum>
       <Question>
         <span>{questionNum}.</span> {question[questionNum - 1]}
       </Question>
-      {questionNum < 17 ? (
-        <FourAnswer>
-          <FourAnswerBtn onClick={btnClick}>
-            <span>전혀 아니다</span>
-          </FourAnswerBtn>
-          <FourAnswerBtn onClick={btnClick}>
-            <span>아니다</span>
-          </FourAnswerBtn>
-          <FourAnswerBtn onClick={btnClick}>
-            <span>그렇다</span>
-          </FourAnswerBtn>
-          <FourAnswerBtn onClick={btnClick}>
-            <span>매우 그렇다</span>
-          </FourAnswerBtn>
-        </FourAnswer>
+      {questionNum < 2 ? (
+        <ThreeAnswer>
+          <ThreeAnswerBtn onClick={btnClick}>플랜테리어</ThreeAnswerBtn>
+          <ThreeAnswerBtn onClick={btnClick}>
+            쾌적한 환경 (공기정화, 미세먼지 해소 등)
+          </ThreeAnswerBtn>
+          <ThreeAnswerBtn onClick={btnClick}>정서안정</ThreeAnswerBtn>
+        </ThreeAnswer>
       ) : (
         <TwoAnswer>
-          <FourAnswerBtn onClick={btnClick}>
-            <span>아니다</span>
-          </FourAnswerBtn>
-          <FourAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={btnClick}>
             <span>그렇다</span>
-          </FourAnswerBtn>
+          </TwoAnswerBtn>
+          <TwoAnswerBtn onClick={btnClick}>
+            <span>아니다</span>
+          </TwoAnswerBtn>
         </TwoAnswer>
       )}
       <Footer />

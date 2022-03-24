@@ -1,78 +1,78 @@
 export const result = {
+  // 목적 Plan(T)erior or (H)ealth or (E)motion
+  // 반려동물 (C)are or (D)on't care
   // 환경 (G)ood or (B)ad
   // 경험 (N)ewbie or (P)ro
-  // 반려동물 (C)are or (D)on't care
-  // 목적 Plan(T)erior or (H)ealth or (E)motion
-  BNCT: {
+  TCBN: {
     name: "몬스테라",
   },
-  BNCH: {
+  HCBN: {
     name: "스투키",
   },
-  BNCE: {
+  ECBN: {
     name: "아글라오네마",
   },
-  BNDT: {
+  TDBN: {
     name: "여인초",
   },
-  BNDH: {
+  HDBN: {
     name: "필로덴드론",
   },
-  BNDE: {
+  EDBN: {
     name: "마리모",
   },
-  BPCT: {
+  TCBP: {
     name: "드라세나 맛상게아나",
   },
-  BPCH: {
+  HCBP: {
     name: "스킨답서스",
   },
-  BPCE: {
+  ECBP: {
     name: "안스리움 안드레아눔",
   },
-  BPDT: {
+  TDBP: {
     name: "크로톤",
   },
-  BPDH: {
+  HDBP: {
     name: "아가베 아테누아타",
   },
-  BPDE: {
+  EDBP: {
     name: "축전",
   },
-  GNCT: {
+  TCGN: {
     name: "제라늄",
   },
-  GNCH: {
+  HCGN: {
     name: "유칼립투스 구니",
   },
-  GNCE: {
+  ECGN: {
     name: "라벤더",
   },
-  GNDT: {
+  TDGN: {
     name: "사계귤(유주나무)",
   },
-  GNDH: {
+  HDGN: {
     name: "해피트리",
   },
-  GNDE: {
+  EDGN: {
     name: "레몬밤",
   },
-  GPCT: {
+  TCGP: {
     name: "알로카시아 아마조니카",
   },
-  GPCH: {
+  HCGP: {
     name: "뱅갈 고무나무",
   },
-  GPCE: {
+  ECGP: {
     name: "율마(월마)",
   },
-  GPDT: {
+  TDGP: {
     name: "박쥐란",
   },
-  GPDH: {
+  HDGP: {
     name: "파키라",
   },
-  GPDE: {
+  EDGP: {
     name: "로즈마리",
   },
 };
