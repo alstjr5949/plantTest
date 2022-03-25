@@ -6,7 +6,8 @@ import { question } from "../question";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Components/footer";
 import { useRecoilState } from "recoil";
-import { questionIndexAtom } from "../atoms";
+import { questionIndexAtom, resultAtom } from "../atoms";
+import { useState } from "react";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -174,15 +175,47 @@ const wrapperVariants = {
 
 function Test() {
   const [questionNum, setQuestionNum] = useRecoilState(questionIndexAtom);
+  const [result, setResult] = useRecoilState(resultAtom);
+  const [careNum, setCareNum] = useState(0);
+  const [expNum, setExpNum] = useState(0);
   const navigate = useNavigate();
   const backBtnClick = () => {
     questionNum === 1 ? navigate("/") : setQuestionNum((prev) => prev - 1);
   };
-  const btnClick = () => {
-    questionNum === 15
-      ? navigate("/result")
-      : setQuestionNum((prev) => prev + 1);
+  // 목적 버튼 함수
+  const purposeAnswer1Click = () => {
+    setResult((prev) => (prev += "T"));
+    setQuestionNum((prev) => prev + 1);
   };
+  const purposeAnswer2Click = () => {
+    setResult((prev) => (prev += "H"));
+    setQuestionNum((prev) => prev + 1);
+  };
+  const purposeAnswer3Click = () => {
+    setResult((prev) => (prev += "E"));
+    setQuestionNum((prev) => prev + 1);
+  };
+  // 2지선다 버튼 함수
+  const twoBtn1Click = () => {
+    if (questionNum < 4) {
+      setCareNum((prev) => prev);
+    } else if (questionNum < 10 && questionNum >= 4) {
+      setExpNum((prev) => prev);
+    }
+    setQuestionNum((prev) => prev + 1);
+  };
+  const twoBtn2Click = () => {
+    if (questionNum < 4) {
+      setCareNum((prev) => prev + 1);
+    } else if (questionNum < 10 && questionNum >= 4) {
+      setExpNum((prev) => prev + 1);
+    }
+    setQuestionNum((prev) => prev + 1);
+  };
+  const btnClick = () => {};
+  console.log("result :", result);
+  console.log("care :", careNum);
+  console.log("exp :", expNum);
   return (
     <Wrapper
       key={questionNum}
@@ -203,19 +236,23 @@ function Test() {
       </Question>
       {questionNum === 1 && (
         <ThreeAnswer>
-          <ThreeAnswerBtn onClick={btnClick}>플랜테리어</ThreeAnswerBtn>
-          <ThreeAnswerBtn onClick={btnClick}>
+          <ThreeAnswerBtn onClick={purposeAnswer1Click}>
+            플랜테리어
+          </ThreeAnswerBtn>
+          <ThreeAnswerBtn onClick={purposeAnswer2Click}>
             쾌적한 환경 (공기정화, 미세먼지 해소 등)
           </ThreeAnswerBtn>
-          <ThreeAnswerBtn onClick={btnClick}>정서안정</ThreeAnswerBtn>
+          <ThreeAnswerBtn onClick={purposeAnswer3Click}>
+            정서적 교감
+          </ThreeAnswerBtn>
         </ThreeAnswer>
       )}
       {questionNum < 10 && questionNum > 1 && (
         <TwoAnswer>
-          <TwoAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={twoBtn1Click}>
             <span>아니다</span>
           </TwoAnswerBtn>
-          <TwoAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={twoBtn2Click}>
             <span>그렇다</span>
           </TwoAnswerBtn>
         </TwoAnswer>
