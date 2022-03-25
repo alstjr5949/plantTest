@@ -201,7 +201,7 @@ function Test() {
       <Question>
         <span>{questionNum}.</span> {question[questionNum - 1]}
       </Question>
-      {questionNum < 2 ? (
+      {questionNum === 1 && (
         <ThreeAnswer>
           <ThreeAnswerBtn onClick={btnClick}>플랜테리어</ThreeAnswerBtn>
           <ThreeAnswerBtn onClick={btnClick}>
@@ -209,13 +209,30 @@ function Test() {
           </ThreeAnswerBtn>
           <ThreeAnswerBtn onClick={btnClick}>정서안정</ThreeAnswerBtn>
         </ThreeAnswer>
-      ) : (
+      )}
+      {questionNum < 10 && questionNum > 1 && (
         <TwoAnswer>
+          <TwoAnswerBtn onClick={btnClick}>
+            <span>아니다</span>
+          </TwoAnswerBtn>
+          <TwoAnswerBtn onClick={btnClick}>
+            <span>그렇다</span>
+          </TwoAnswerBtn>
+        </TwoAnswer>
+      )}
+      {questionNum < 16 && questionNum >= 10 && (
+        <TwoAnswer>
+          <TwoAnswerBtn onClick={btnClick}>
+            <span>전혀 아니다</span>
+          </TwoAnswerBtn>
+          <TwoAnswerBtn onClick={btnClick}>
+            <span>아니다</span>
+          </TwoAnswerBtn>
           <TwoAnswerBtn onClick={btnClick}>
             <span>그렇다</span>
           </TwoAnswerBtn>
           <TwoAnswerBtn onClick={btnClick}>
-            <span>아니다</span>
+            <span>매우 그렇다</span>
           </TwoAnswerBtn>
         </TwoAnswer>
       )}
