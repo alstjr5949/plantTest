@@ -1,15 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
-import { questionIndexAtom } from "../atoms";
+import {
+  careAtom,
+  envAtom,
+  expAtom,
+  questionIndexAtom,
+  resultAtom,
+} from "../atoms";
 import Footer from "../Components/footer";
 import tree from "../img/tree.png";
+import { result } from "../result.js";
 
 const Wrapper = styled.div`
   width: 500px;
   min-width: 400px;
-  height: 190vh;
-  min-height: 1600px;
+  height: 145vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -22,13 +29,14 @@ const Wrapper = styled.div`
   }
   @media ${(props) => props.theme.laptop} {
     width: 500px;
-    height: 1800px;
+    height: 1400px;
   }
 `;
 
 const ResultTitle = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 0px 12.5px;
   font-size: 30px;
@@ -132,36 +140,28 @@ const RestartBtn = styled.div`
 function Result() {
   const navigate = useNavigate();
   const setQuestionNum = useSetRecoilState(questionIndexAtom);
+  const setCareNum = useSetRecoilState(careAtom);
+  const setExpNum = useSetRecoilState(expAtom);
+  const setEnvNum = useSetRecoilState(envAtom);
+  const [finalResult, setFinalResult] = useRecoilState(resultAtom);
   const restartBtnClick = () => {
     setQuestionNum(1);
+    setFinalResult("");
+    setCareNum(0);
+    setExpNum(0);
+    setEnvNum(0);
     navigate("/");
   };
   return (
     <Wrapper>
       <ResultTitle>
         <span>나에게 딱 맞는 식물은?</span>
-        <span>'엄근진 나무'</span>
+        <span>{result[finalResult]?.name || "Loading..."}</span>
       </ResultTitle>
       <ResultImg></ResultImg>
       <ResultSub>
         <ResultSubTitle>
           특징<span>🪴</span>
-        </ResultSubTitle>
-        <ResultContentBox>
-          <ResultContent>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </ResultContent>
-          <ResultContent>A esse eveniet nihil quos quam sit?</ResultContent>
-          <ResultContent>Fugiat delectus esse nesciunt tempora</ResultContent>
-          <ResultContent>
-            a velit placeat! Temporibus animi mollitia aut exercitationem magnam
-            officiis.
-          </ResultContent>
-        </ResultContentBox>
-      </ResultSub>
-      <ResultSub>
-        <ResultSubTitle>
-          키우는 법<span>🪴</span>
         </ResultSubTitle>
         <ResultContentBox>
           <ResultContent>

@@ -6,8 +6,13 @@ import { question } from "../question";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Components/footer";
 import { useRecoilState } from "recoil";
-import { questionIndexAtom, resultAtom } from "../atoms";
-import { useState } from "react";
+import {
+  careAtom,
+  envAtom,
+  expAtom,
+  questionIndexAtom,
+  resultAtom,
+} from "../atoms";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -176,8 +181,9 @@ const wrapperVariants = {
 function Test() {
   const [questionNum, setQuestionNum] = useRecoilState(questionIndexAtom);
   const [result, setResult] = useRecoilState(resultAtom);
-  const [careNum, setCareNum] = useState(0);
-  const [expNum, setExpNum] = useState(0);
+  const [careNum, setCareNum] = useRecoilState(careAtom);
+  const [expNum, setExpNum] = useRecoilState(expAtom);
+  const [envNum, setEnvNum] = useRecoilState(envAtom);
   const navigate = useNavigate();
   const backBtnClick = () => {
     questionNum === 1 ? navigate("/") : setQuestionNum((prev) => prev - 1);
@@ -212,10 +218,75 @@ function Test() {
     }
     setQuestionNum((prev) => prev + 1);
   };
-  const btnClick = () => {};
-  console.log("result :", result);
-  console.log("care :", careNum);
-  console.log("exp :", expNum);
+  // 4지선다 버튼 함수
+  const fousrBtn1Click = () => {
+    if (questionNum === 15) {
+      careNum > 0
+        ? setResult((prev) => prev + "C")
+        : setResult((prev) => prev + "D");
+      expNum > 3
+        ? setResult((prev) => prev + "P")
+        : setResult((prev) => prev + "N");
+      envNum > 9
+        ? setResult((prev) => prev + "G")
+        : setResult((prev) => prev + "B");
+      navigate("/result");
+    } else {
+      setEnvNum((prev) => prev);
+      setQuestionNum((prev) => prev + 1);
+    }
+  };
+  const fousrBtn2Click = () => {
+    if (questionNum === 15) {
+      careNum > 0
+        ? setResult((prev) => prev + "C")
+        : setResult((prev) => prev + "D");
+      expNum > 3
+        ? setResult((prev) => prev + "P")
+        : setResult((prev) => prev + "N");
+      envNum > 9
+        ? setResult((prev) => prev + "G")
+        : setResult((prev) => prev + "B");
+      navigate("/result");
+    } else {
+      setEnvNum((prev) => prev + 1);
+      setQuestionNum((prev) => prev + 1);
+    }
+  };
+  const fousrBtn3Click = () => {
+    if (questionNum === 15) {
+      careNum > 0
+        ? setResult((prev) => prev + "C")
+        : setResult((prev) => prev + "D");
+      expNum > 3
+        ? setResult((prev) => prev + "P")
+        : setResult((prev) => prev + "N");
+      envNum > 9
+        ? setResult((prev) => prev + "G")
+        : setResult((prev) => prev + "B");
+      navigate("/result");
+    } else {
+      setEnvNum((prev) => prev + 2);
+      setQuestionNum((prev) => prev + 1);
+    }
+  };
+  const fousrBtn4Click = () => {
+    if (questionNum === 15) {
+      careNum > 0
+        ? setResult((prev) => prev + "C")
+        : setResult((prev) => prev + "D");
+      expNum > 3
+        ? setResult((prev) => prev + "P")
+        : setResult((prev) => prev + "N");
+      envNum > 9
+        ? setResult((prev) => prev + "G")
+        : setResult((prev) => prev + "B");
+      navigate("/result");
+    } else {
+      setEnvNum((prev) => prev + 3);
+      setQuestionNum((prev) => prev + 1);
+    }
+  };
   return (
     <Wrapper
       key={questionNum}
@@ -259,16 +330,16 @@ function Test() {
       )}
       {questionNum < 16 && questionNum >= 10 && (
         <TwoAnswer>
-          <TwoAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={fousrBtn1Click}>
             <span>전혀 아니다</span>
           </TwoAnswerBtn>
-          <TwoAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={fousrBtn2Click}>
             <span>아니다</span>
           </TwoAnswerBtn>
-          <TwoAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={fousrBtn3Click}>
             <span>그렇다</span>
           </TwoAnswerBtn>
-          <TwoAnswerBtn onClick={btnClick}>
+          <TwoAnswerBtn onClick={fousrBtn4Click}>
             <span>매우 그렇다</span>
           </TwoAnswerBtn>
         </TwoAnswer>
