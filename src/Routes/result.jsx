@@ -152,6 +152,7 @@ function Result() {
     setEnvNum(0);
     navigate("/");
   };
+  console.log(finalResult);
   return (
     <Wrapper>
       <ResultTitle>

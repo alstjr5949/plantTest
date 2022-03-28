@@ -21,7 +21,7 @@ export const result = {
   EDNB: {
     name: "마리모",
   },
-  TCBP: {
+  TCPB: {
     name: "드라세나 맛상게아나",
   },
   HCPB: {

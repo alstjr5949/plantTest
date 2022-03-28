@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { question } from "../question";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Components/footer";
 import { useRecoilState } from "recoil";
 import {
@@ -38,7 +38,7 @@ const BackHomeBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 35px;
+  font-size: 25px;
   margin-top: 30px;
   cursor: pointer;
   @media ${(props) => props.theme.IphoneX} {
@@ -185,8 +185,8 @@ function Test() {
   const [expNum, setExpNum] = useRecoilState(expAtom);
   const [envNum, setEnvNum] = useRecoilState(envAtom);
   const navigate = useNavigate();
-  const backBtnClick = () => {
-    questionNum === 1 ? navigate("/") : setQuestionNum((prev) => prev - 1);
+  const homeBtnClick = () => {
+    navigate("/");
   };
   // 목적 버튼 함수
   const purposeAnswer1Click = () => {
@@ -287,6 +287,10 @@ function Test() {
       setQuestionNum((prev) => prev + 1);
     }
   };
+  console.log("result :", result);
+  console.log("care :", careNum);
+  console.log("exp :", expNum);
+  console.log("env :", envNum);
   return (
     <Wrapper
       key={questionNum}
@@ -295,8 +299,8 @@ function Test() {
       animate="animate"
       exit="exit"
     >
-      <BackHomeBtn onClick={backBtnClick}>
-        <FontAwesomeIcon icon={faAngleLeft} />
+      <BackHomeBtn onClick={homeBtnClick}>
+        <FontAwesomeIcon icon={faHouse} />
       </BackHomeBtn>
       <ProgressNum>
         <span>{String(questionNum).padStart(2, "0")}</span>
