@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/plantTest/static/js/main.253d9c2f.js",
+    "main.js": "/plantTest/static/js/main.84d328c1.js",
     "static/media/tree.png": "/plantTest/static/media/tree.47a9a320f7ee0b096731.png",
     "static/media/sprout.png": "/plantTest/static/media/sprout.85d5175225890212c848.png",
     "index.html": "/plantTest/index.html",
-    "main.253d9c2f.js.map": "/plantTest/static/js/main.253d9c2f.js.map"
+    "main.84d328c1.js.map": "/plantTest/static/js/main.84d328c1.js.map"
   },
   "entrypoints": [
-    "static/js/main.253d9c2f.js"
+    "static/js/main.84d328c1.js"
   ]
 }
