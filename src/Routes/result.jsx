@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { FacebookIcon, FacebookShareButton } from "react-share";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import {
@@ -169,7 +171,26 @@ const ShareIcon = styled.div`
   align-items: center;
 `;
 
+const UrlIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 50%;
+  border: 0px;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  background-color: #7362ff;
+  &:hover {
+    background-color: #a99fee;
+  }
+`;
+
 function Result() {
+  const shareUrl = "https://alstjr5949.github.io/plantTest/";
   const navigate = useNavigate();
   const setQuestionNum = useSetRecoilState(questionIndexAtom);
   const setCareNum = useSetRecoilState(careAtom);
@@ -211,8 +232,16 @@ function Result() {
       <ShareBtnContainer>
         <ShareText>테스트 공유하기</ShareText>
         <ShareIconContainer>
-          <ShareIcon></ShareIcon>
-          <ShareIcon></ShareIcon>
+          <FacebookShareButton url={shareUrl}>
+            <FacebookIcon
+              size={40}
+              round={true}
+              borderRadius={20}
+            ></FacebookIcon>
+          </FacebookShareButton>
+          <CopyToClipboard text={shareUrl}>
+            <UrlIcon>URL</UrlIcon>
+          </CopyToClipboard>
           <ShareIcon></ShareIcon>
         </ShareIconContainer>
       </ShareBtnContainer>
