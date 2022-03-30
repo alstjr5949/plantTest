@@ -186,6 +186,11 @@ function Test() {
   const [envNum, setEnvNum] = useRecoilState(envAtom);
   const navigate = useNavigate();
   const homeBtnClick = () => {
+    setResult("");
+    setCareNum(0);
+    setEnvNum(0);
+    setExpNum(0);
+    setQuestionNum(1);
     navigate("/");
   };
   // 목적 버튼 함수

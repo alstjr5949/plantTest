@@ -87,7 +87,7 @@ const Hashtag = styled.div`
   color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   font-size: 20px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
@@ -96,7 +96,7 @@ const Hashtag = styled.div`
 `;
 
 const StartBtn = styled.div`
-  width: 60%;
+  width: 80%;
   height: 60px;
   border-radius: 50px;
   display: flex;
@@ -110,54 +110,11 @@ const StartBtn = styled.div`
   color: white;
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 30px;
   cursor: pointer;
   @media ${(props) => props.theme.IphoneX} {
     width: 80%;
     font-size: 18px;
   }
-`;
-
-const ShareBtnContainer = styled.div`
-  width: 80%;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  margin-bottom: 60px;
-  @media ${(props) => props.theme.IphoneX} {
-    width: 100%;
-    font-size: 15px;
-  }
-`;
-
-const ShareText = styled.div`
-  display: flex;
-  width: 40%;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  font-weight: 500;
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
-`;
-
-const ShareIconContainer = styled.div`
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`;
-
-const ShareIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const wrapperVariants = {
@@ -217,14 +174,6 @@ function Home() {
         <span>#힐링</span>
       </Hashtag>
       <StartBtn onClick={startBtnClick}>테스트 시작하기</StartBtn>
-      <ShareBtnContainer>
-        <ShareText>테스트 공유하기</ShareText>
-        <ShareIconContainer>
-          <ShareIcon></ShareIcon>
-          <ShareIcon></ShareIcon>
-          <ShareIcon></ShareIcon>
-        </ShareIconContainer>
-      </ShareBtnContainer>
       <Footer />
     </Wrapper>
   );

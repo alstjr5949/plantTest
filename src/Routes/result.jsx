@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   padding: 50px 20px;
   @media ${(props) => props.theme.IphoneX} {
@@ -40,7 +40,6 @@ const ResultTitle = styled.div`
   flex-direction: column;
   margin: 0px 12.5px;
   font-size: 30px;
-  margin-bottom: 50px;
   & span:nth-child(2) {
     font-size: 45px;
     font-weight: 800;
@@ -73,20 +72,10 @@ const ResultImg = styled.div`
 const ResultSub = styled.div`
   margin-top: 40px;
   padding: 40px 20px;
-  border-radius: 20px;
+  border-radius: 50% 50% 20px 20px;
   box-shadow: rgba(150, 98, 84, 0.15) 0px 0px 0px 1px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
-  }
-`;
-
-const ResultSubTitle = styled.div`
-  width: 100%;
-  padding: 0px 25px;
-  font-size: 30px;
-  font-weight: 500;
-  @media ${(props) => props.theme.IphoneX} {
-    font-size: 25px;
   }
 `;
 
@@ -123,11 +112,12 @@ const RestartBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 80%;
   height: 60px;
   border-radius: 40px;
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 30px;
   background: linear-gradient(
     to right,
     #cee166,
@@ -135,6 +125,48 @@ const RestartBtn = styled.div`
   );
   color: white;
   cursor: pointer;
+`;
+
+const ShareBtnContainer = styled.div`
+  width: 80%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  margin-bottom: 60px;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+    font-size: 15px;
+  }
+`;
+
+const ShareText = styled.div`
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-weight: 500;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+`;
+
+const ShareIconContainer = styled.div`
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const ShareIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 function Result() {
@@ -159,12 +191,9 @@ function Result() {
         <span>나에게 딱 맞는 식물은?</span>
         <span>{result[finalResult]?.name || "Loading..."}</span>
       </ResultTitle>
-      <ResultImg></ResultImg>
       <ResultSub>
-        <ResultSubTitle>
-          특징<span>🪴</span>
-        </ResultSubTitle>
         <ResultContentBox>
+          <ResultImg></ResultImg>
           <ResultContent>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           </ResultContent>
@@ -179,6 +208,14 @@ function Result() {
       <BtnBox>
         <RestartBtn onClick={restartBtnClick}>테스트 다시하기</RestartBtn>
       </BtnBox>
+      <ShareBtnContainer>
+        <ShareText>테스트 공유하기</ShareText>
+        <ShareIconContainer>
+          <ShareIcon></ShareIcon>
+          <ShareIcon></ShareIcon>
+          <ShareIcon></ShareIcon>
+        </ShareIconContainer>
+      </ShareBtnContainer>
       <Footer />
     </Wrapper>
   );
