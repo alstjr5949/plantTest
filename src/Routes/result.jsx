@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FacebookIcon, FacebookShareButton } from "react-share";
+import { FacebookShareButton } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
@@ -13,6 +13,8 @@ import {
 import Footer from "../Components/footer";
 import tree from "../img/tree.png";
 import { result } from "../result.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 const Wrapper = styled.div`
   width: 500px;
@@ -181,12 +183,27 @@ const UrlIcon = styled.div`
   border-radius: 50%;
   border: 0px;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   background-color: #7362ff;
   &:hover {
     background-color: #a99fee;
   }
+`;
+
+const FbIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 50%;
+  border: 0px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #1672e7;
 `;
 
 function Result() {
@@ -233,11 +250,9 @@ function Result() {
         <ShareText>테스트 공유하기</ShareText>
         <ShareIconContainer>
           <FacebookShareButton url={shareUrl}>
-            <FacebookIcon
-              size={40}
-              round={true}
-              borderRadius={20}
-            ></FacebookIcon>
+            <FbIcon>
+              <FontAwesomeIcon icon={faFacebookF} />
+            </FbIcon>
           </FacebookShareButton>
           <CopyToClipboard text={shareUrl}>
             <UrlIcon>URL</UrlIcon>
