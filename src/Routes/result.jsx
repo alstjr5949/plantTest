@@ -11,10 +11,10 @@ import {
   resultAtom,
 } from "../atoms";
 import Footer from "../Components/footer";
-import tree from "../img/tree.png";
 import { result } from "../result.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
   width: 500px;
@@ -58,15 +58,10 @@ const ResultTitle = styled.div`
   }
 `;
 
-const ResultImg = styled.div`
-  background-image: url(${tree});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+const ResultImg = styled(motion.div)`
   margin: 0 auto;
   width: 450px;
   height: 450px;
-  filter: brightness(1.3);
   @media ${(props) => props.theme.IphoneX} {
     width: 350px;
     height: 350px;
@@ -231,7 +226,9 @@ function Result() {
       </ResultTitle>
       <ResultSub>
         <ResultContentBox>
-          <ResultImg></ResultImg>
+          <ResultImg>
+            <img src={result[finalResult]?.imgUrl} alt="dd" />
+          </ResultImg>
           <ResultContent>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           </ResultContent>
