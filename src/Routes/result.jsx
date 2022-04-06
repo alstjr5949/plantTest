@@ -59,6 +59,10 @@ const ResultTitle = styled.div`
 `;
 
 const ResultImg = styled(motion.div)`
+  background-image: url(${(props) => props.img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   margin: 0 auto;
   width: 450px;
   height: 450px;
@@ -226,9 +230,7 @@ function Result() {
       </ResultTitle>
       <ResultSub>
         <ResultContentBox>
-          <ResultImg>
-            <img src={result[finalResult]?.imgUrl} alt="dd" />
-          </ResultImg>
+          <ResultImg img={result[finalResult]["imgUrl"]}></ResultImg>
           <ResultContent>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           </ResultContent>
