@@ -230,7 +230,7 @@ function Result() {
       </ResultTitle>
       <ResultSub>
         <ResultContentBox>
-          <ResultImg img={result[finalResult]["imgUrl"]}></ResultImg>
+          <ResultImg img={result[finalResult]?.imgUrl || null}></ResultImg>
           <ResultContent>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           </ResultContent>

@@ -5,7 +5,7 @@ export const result = {
   // 환경 (G)ood or (B)ad
   TCNB: {
     name: "몬스테라",
-    imgUrl: "../img/monsetera.png",
+    imgUrl: "img/monstera.png",
   },
   HCNB: {
     name: "스투키",
