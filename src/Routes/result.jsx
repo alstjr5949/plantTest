@@ -45,7 +45,7 @@ const ResultTitle = styled.div`
   margin: 0px 12.5px;
   font-size: 30px;
   & span:nth-child(2) {
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 800;
     color: ${(props) => props.theme.color.green};
     margin-top: 10px;
@@ -63,9 +63,9 @@ const ResultImg = styled(motion.div)`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   width: 450px;
-  height: 450px;
+  height: 500px;
   @media ${(props) => props.theme.IphoneX} {
     width: 350px;
     height: 350px;
@@ -74,8 +74,8 @@ const ResultImg = styled(motion.div)`
 
 const ResultSub = styled.div`
   margin-top: 40px;
-  padding: 40px 20px;
-  border-radius: 50% 50% 20px 20px;
+  padding: 10px 20px 40px;
+  border-radius: 30% 30% 20px 20px;
   box-shadow: rgba(150, 98, 84, 0.15) 0px 0px 0px 1px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;

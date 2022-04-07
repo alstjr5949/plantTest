@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "../Components/footer";
+import sprout from "../img/sprout.png";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -71,7 +72,7 @@ const Title = styled(motion.div)`
 `;
 
 const MainImg = styled.div`
-  background-image: url(img/sprout.png);
+  background-image: url(${sprout});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;

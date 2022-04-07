@@ -5,103 +5,98 @@ export const result = {
   // 환경 (G)ood or (B)ad
   TCNB: {
     name: "몬스테라",
-    imgUrl: "img/monstera.png",
+    imgUrl: "img/1monstera.png",
   },
   HCNB: {
     name: "스투키",
-    imgUrl:
-      "https://images.rawpixel.com/image_png_300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczEta3V0LTAwMTIta3dhbl8xLnBuZw.png?s=CVznNtKUSmJdWMLnlK2QOtgc36uG0A9EIz80vilftsQ",
+    imgUrl: "img/2stucky.png",
   },
   ECNB: {
     name: "아글라오네마",
-    imgUrl:
-      "https://images.rawpixel.com/image_png_150/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbXUxMy1ha2U1ODIzLWFrZS0xLWt6N2gxaDJtLnBuZw.png?s=_NUYFNHWqpPe3voxGd8nnsRFXupFe9CLNI6UDFfCI1k",
+    imgUrl: "img/3aglaonema.png",
   },
   TDNB: {
     name: "여인초",
-    imgUrl:
-      "https://images.rawpixel.com/image_png_200/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczEwOC1hazAyNzNfMi5wbmc.png?s=A8NkT2V3-cFyJqtaeQL8lt32DLlv4qHOi4aVR4u87VE",
+    imgUrl: "img/4birdParadise.png",
   },
   HDNB: {
     name: "필로덴드론",
-    imgUrl:
-      "https://images.rawpixel.com/image_png_150/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczUyLWt1dC0wMTQzLXBhaV8xLnBuZw.png?s=Eil_9tbgH56_M1_pXfmSveUw7pQGEb-hmDp9IPGve_4",
+    imgUrl: "img/5philodendron.png",
   },
   EDNB: {
     name: "마리모",
-    imgUrl:
-      "https://images.rawpixel.com/image_png_200/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbXUxMy1ha2U1Nzk1LWFrZS0xLnBuZw.png?s=04dDcu3v3izSnuYnOToVleIr1Q9NF4RvpjkUTcKy9WM",
+    imgUrl: "img/6marimo.png",
   },
   TCPB: {
     name: "드라세나 맛상게아나",
-    imgUrl: "",
+    imgUrl: "img/7dracaena.png",
   },
   HCPB: {
     name: "스킨답서스",
-    imgUrl: "",
+    imgUrl: "img/8goldenPothos.png",
   },
   ECPB: {
     name: "안스리움 안드레아눔",
-    imgUrl: "",
+    imgUrl: "img/9anthurium.png",
   },
   TDPB: {
     name: "크로톤",
-    imgUrl: "",
+    imgUrl: "img/10croton.png",
   },
   HDPB: {
     name: "아가베 아테누아타",
-    imgUrl: "",
+    imgUrl: "img/11agave.png",
   },
   EDPB: {
     name: "축전",
-    imgUrl: "",
+    imgUrl: "img/12conophytu.png",
   },
   TCNG: {
     name: "제라늄",
-    imgUrl: "",
+    imgUrl: "img/13pelagonium.png",
   },
   HCNG: {
     name: "유칼립투스 구니",
-    imgUrl: "",
+    imgUrl: "img/14eucalyptus.png",
   },
   ECNG: {
     name: "라벤더",
-    imgUrl: "",
+    imgUrl: "img/15lavender.png",
   },
   TDNG: {
     name: "사계귤(유주나무)",
-    imgUrl: "",
+    imgUrl: "img/16calamondin.png",
   },
   HDNG: {
     name: "해피트리",
-    imgUrl: "",
+    imgUrl: "img/17radermachera.png",
   },
   EDNG: {
     name: "레몬밤",
-    imgUrl: "",
+    imgUrl: "img/18lemonBalm.png",
   },
   TCPG: {
     name: "알로카시아 아마조니카",
-    imgUrl: "",
+    imgUrl: "img/19alocasia.png",
   },
   HCPG: {
     name: "뱅갈 고무나무",
-    imgUrl: "",
+    imgUrl: "img/20benghalensis.png",
   },
   ECPG: {
     name: "율마(월마)",
-    imgUrl: "",
+    imgUrl: "img/21monterey.png",
   },
   TDPG: {
     name: "박쥐란",
-    imgUrl: "",
+    imgUrl: "img/22staghorn.png",
   },
   HDPG: {
     name: "파키라",
-    imgUrl: "",
+    imgUrl: "img/23pachira.png",
   },
   EDPG: {
     name: "로즈마리",
-    imgUrl: "",
+    imgUrl: "img/24rosemary.png",
   },
 };
