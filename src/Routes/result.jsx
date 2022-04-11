@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FacebookShareButton } from "react-share";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
@@ -13,7 +13,7 @@ import {
 import Footer from "../Components/footer";
 import { result } from "../result.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
@@ -164,14 +164,22 @@ const ShareIconContainer = styled.div`
   align-items: center;
 `;
 
-const ShareIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
+const TwIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 50%;
+  border: 0px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #34b0f4;
+  &:hover {
+    background-color: #add0ff;
+  }
 `;
 
 const UrlIcon = styled.div`
@@ -205,6 +213,9 @@ const FbIcon = styled.div`
   font-size: 16px;
   cursor: pointer;
   background-color: #1672e7;
+  &:hover {
+    background-color: #4a95f7;
+  }
 `;
 
 function Result() {
@@ -223,7 +234,9 @@ function Result() {
     setEnvNum(0);
     navigate("/");
   };
-  setFinalResult("EDPG");
+  const urlBtnClick = () => {
+    alert("URL이 복사되었습니다.");
+  };
   return (
     <Wrapper>
       <ResultTitle>
@@ -249,10 +262,14 @@ function Result() {
               <FontAwesomeIcon icon={faFacebookF} />
             </FbIcon>
           </FacebookShareButton>
+          <TwitterShareButton url={shareUrl}>
+            <TwIcon>
+              <FontAwesomeIcon icon={faTwitter} />
+            </TwIcon>
+          </TwitterShareButton>
           <CopyToClipboard text={shareUrl}>
-            <UrlIcon>URL</UrlIcon>
+            <UrlIcon onClick={urlBtnClick}>URL</UrlIcon>
           </CopyToClipboard>
-          <ShareIcon></ShareIcon>
         </ShareIconContainer>
       </ShareBtnContainer>
       <Footer />
