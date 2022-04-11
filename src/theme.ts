@@ -21,6 +21,6 @@ export const theme: DefaultTheme = {
   color: {
     green: "#1ac914",
     brown: "#966254",
-    purple: "#C08BFD",
+    purple: "#5220f5",
   },
 };

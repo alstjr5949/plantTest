@@ -19,7 +19,6 @@ import { motion } from "framer-motion";
 const Wrapper = styled.div`
   width: 500px;
   min-width: 400px;
-  height: 145vh;
   min-height: 110vh;
   display: flex;
   flex-direction: column;
@@ -43,9 +42,9 @@ const ResultTitle = styled.div`
   align-items: center;
   flex-direction: column;
   margin: 0px 12.5px;
-  font-size: 30px;
+  font-size: 28px;
   & span:nth-child(2) {
-    font-size: 50px;
+    font-size: 46px;
     font-weight: 800;
     color: ${(props) => props.theme.color.green};
     margin-top: 10px;
@@ -92,9 +91,12 @@ const ResultContent = styled.li`
   width: 100%;
   margin-bottom: 20px;
   font-size: 18px;
+  position: relative;
+  padding-left: 30px;
   &::before {
     content: "🌱";
-    margin-right: 8px;
+    position: absolute;
+    left: 0;
   }
   @media ${(props) => props.theme.IphoneX} {
     font-size: 15px;
@@ -221,7 +223,7 @@ function Result() {
     setEnvNum(0);
     navigate("/");
   };
-  console.log(finalResult);
+  setFinalResult("EDPG");
   return (
     <Wrapper>
       <ResultTitle>
@@ -231,15 +233,9 @@ function Result() {
       <ResultSub>
         <ResultContentBox>
           <ResultImg img={result[finalResult]?.imgUrl || null}></ResultImg>
-          <ResultContent>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </ResultContent>
-          <ResultContent>A esse eveniet nihil quos quam sit?</ResultContent>
-          <ResultContent>Fugiat delectus esse nesciunt tempora</ResultContent>
-          <ResultContent>
-            a velit placeat! Temporibus animi mollitia aut exercitationem magnam
-            officiis.
-          </ResultContent>
+          <ResultContent>{result[finalResult]?.feature1 || null}</ResultContent>
+          <ResultContent>{result[finalResult]?.feature2 || null}</ResultContent>
+          <ResultContent>{result[finalResult]?.feature3 || null}</ResultContent>
         </ResultContentBox>
       </ResultSub>
       <BtnBox>

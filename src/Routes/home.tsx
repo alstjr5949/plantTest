@@ -38,17 +38,17 @@ const Title = styled(motion.div)`
     margin: 10px 0px;
     font-weight: 400;
     &:first-child {
-      font-size: 28px;
+      font-size: 22px;
       & span {
         font-size: 28px;
         color: ${(props) => props.theme.color.green};
       }
     }
     &:nth-child(2) {
-      font-size: 45px;
+      font-size: 55px;
       font-weight: 700;
       background: linear-gradient(
-        to right,
+        to bottom,
         #cee166,
         ${(props) => props.theme.color.green}
       );

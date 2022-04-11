@@ -167,7 +167,7 @@ const wrapperVariants = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
   exit: {
@@ -317,7 +317,7 @@ function Test() {
       {questionNum === 1 && (
         <ThreeAnswer>
           <ThreeAnswerBtn onClick={purposeAnswer1Click}>
-            플랜테리어
+            플랜테리어 (식물을 활용한 인테리어)
           </ThreeAnswerBtn>
           <ThreeAnswerBtn onClick={purposeAnswer2Click}>
             쾌적한 환경 (공기정화, 미세먼지 해소 등)
