@@ -46,7 +46,13 @@ const ResultTitle = styled.div`
   & span:nth-child(2) {
     font-size: 46px;
     font-weight: 800;
-    color: ${(props) => props.theme.color.green};
+    background: linear-gradient(
+      to bottom,
+      #fdabd9,
+      ${(props) => props.theme.color.purple}
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-top: 10px;
   }
   @media ${(props) => props.theme.IphoneX} {
@@ -237,6 +243,7 @@ function Result() {
   const urlBtnClick = () => {
     alert("URL이 복사되었습니다.");
   };
+  setFinalResult("EDPB");
   return (
     <Wrapper>
       <ResultTitle>

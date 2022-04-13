@@ -41,7 +41,13 @@ const Title = styled(motion.div)`
       font-size: 22px;
       & span {
         font-size: 28px;
-        color: ${(props) => props.theme.color.green};
+        background: linear-gradient(
+          to bottom,
+          #cee166,
+          ${(props) => props.theme.color.green}
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
     &:nth-child(2) {
@@ -97,18 +103,18 @@ const Hashtag = styled.div`
 
 const StartBtn = styled.div`
   width: 80%;
-  height: 60px;
+  height: 70px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
-    to right,
+    to bottom,
     #cee166,
     ${(props) => props.theme.color.green}
   );
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   cursor: pointer;
   @media ${(props) => props.theme.IphoneX} {
