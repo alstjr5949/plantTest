@@ -3,7 +3,6 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
 `;
 
 const FooterBox = styled.div`
@@ -26,7 +25,7 @@ const FooterBox = styled.div`
 function Footer() {
   return (
     <Wrapper>
-      <FooterBox>&copy; 2022 Mingcoding</FooterBox>
+      <FooterBox>&copy; 2022 GreenThumb</FooterBox>
     </Wrapper>
   );
 }

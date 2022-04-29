@@ -19,7 +19,6 @@ import { motion } from "framer-motion";
 const Wrapper = styled.div`
   width: 500px;
   min-width: 400px;
-  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -32,7 +31,6 @@ const Wrapper = styled.div`
   }
   @media ${(props) => props.theme.laptop} {
     width: 500px;
-    height: 1400px;
   }
 `;
 
@@ -140,13 +138,13 @@ const RestartBtn = styled.div`
 
 const ShareBtnContainer = styled.div`
   width: 80%;
-  height: 55px;
+  padding: 10px 5px;
   display: flex;
   align-items: center;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 15px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   @media ${(props) => props.theme.IphoneX} {
     width: 100%;
     font-size: 15px;
@@ -243,7 +241,6 @@ function Result() {
   const urlBtnClick = () => {
     alert("URL이 복사되었습니다.");
   };
-  setFinalResult("EDPB");
   return (
     <Wrapper>
       <ResultTitle>
