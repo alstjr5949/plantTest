@@ -26,8 +26,7 @@ const Wrapper = styled.div`
   position: relative;
   padding: 50px 20px;
   @media ${(props) => props.theme.IphoneX} {
-    width: 100%;
-    height: 1600px;
+    width: 100vw;
   }
   @media ${(props) => props.theme.laptop} {
     width: 500px;
@@ -70,8 +69,8 @@ const ResultImg = styled(motion.div)`
   width: 450px;
   height: 500px;
   @media ${(props) => props.theme.IphoneX} {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 300px;
   }
 `;
 
@@ -103,7 +102,8 @@ const ResultContent = styled.li`
     left: 0;
   }
   @media ${(props) => props.theme.IphoneX} {
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 `;
 
@@ -134,6 +134,9 @@ const RestartBtn = styled.div`
   );
   color: white;
   cursor: pointer;
+  @media ${(props) => props.theme.IphoneX} {
+    width: 100%;
+  }
 `;
 
 const ShareBtnContainer = styled.div`
