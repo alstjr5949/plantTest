@@ -292,10 +292,6 @@ function Test() {
       setQuestionNum((prev) => prev + 1);
     }
   };
-  console.log("result :", result);
-  console.log("care :", careNum);
-  console.log("exp :", expNum);
-  console.log("env :", envNum);
   return (
     <Wrapper
       key={questionNum}
