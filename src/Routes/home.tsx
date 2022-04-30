@@ -52,7 +52,7 @@ const Title = styled(motion.div)`
     }
     &:nth-child(2) {
       font-size: 55px;
-      font-weight: 700;
+      font-family: "GmarketSansBold";
       background: linear-gradient(
         to bottom,
         #cee166,
@@ -116,6 +116,7 @@ const StartBtn = styled.div`
   color: white;
   font-size: 24px;
   font-weight: 600;
+  margin-bottom: 30px;
   cursor: pointer;
   @media ${(props) => props.theme.IphoneX} {
     width: 80%;

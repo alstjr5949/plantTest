@@ -43,7 +43,7 @@ const ResultTitle = styled.div`
   font-size: 28px;
   & span:nth-child(2) {
     font-size: 46px;
-    font-weight: 800;
+    font-family: "GmarketSansBold";
     background: linear-gradient(
       to bottom,
       #fdabd9,
