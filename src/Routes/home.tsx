@@ -15,7 +15,7 @@ const Wrapper = styled(motion.div)`
   padding: 50px 20px;
   position: relative;
   @media ${(props) => props.theme.IphoneX} {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
   }
   @media ${(props) => props.theme.laptop} {
