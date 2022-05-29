@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { question } from "../question";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faL } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Components/footer";
 import { useRecoilState } from "recoil";
 import {
@@ -13,6 +13,7 @@ import {
   questionIndexAtom,
   resultAtom,
 } from "../atoms";
+import { useState } from "react";
 
 const Wrapper = styled(motion.div)`
   width: 500px;
@@ -184,6 +185,7 @@ function Test() {
   const [careNum, setCareNum] = useRecoilState(careAtom);
   const [expNum, setExpNum] = useRecoilState(expAtom);
   const [envNum, setEnvNum] = useRecoilState(envAtom);
+  const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
   const homeBtnClick = () => {
     setResult("");
@@ -195,103 +197,162 @@ function Test() {
   };
   // 목적 버튼 함수
   const purposeAnswer1Click = () => {
-    setResult((prev) => (prev += "T"));
-    setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      setResult((prev) => (prev += "T"));
+      setQuestionNum((prev) => prev + 1);
+      setChecked(!checked);
+      setTimeout(() => {
+        setChecked(false);
+      }, 1000);
+    }
   };
   const purposeAnswer2Click = () => {
-    setResult((prev) => (prev += "H"));
-    setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      setResult((prev) => (prev += "H"));
+      setQuestionNum((prev) => prev + 1);
+      setChecked(!checked);
+      setTimeout(() => {
+        setChecked(false);
+      }, 1000);
+    }
   };
   const purposeAnswer3Click = () => {
-    setResult((prev) => (prev += "E"));
-    setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      setResult((prev) => (prev += "E"));
+      setQuestionNum((prev) => prev + 1);
+      setChecked(!checked);
+      setTimeout(() => {
+        setChecked(false);
+      }, 1000);
+    }
   };
   // 2지선다 버튼 함수
   const twoBtn1Click = () => {
-    if (questionNum < 4) {
-      setCareNum((prev) => prev);
-    } else if (questionNum < 10 && questionNum >= 4) {
-      setExpNum((prev) => prev);
+    if (checked === false) {
+      if (questionNum < 4) {
+        setCareNum((prev) => prev);
+      } else if (questionNum < 10 && questionNum >= 4) {
+        setExpNum((prev) => prev);
+      }
+      setQuestionNum((prev) => prev + 1);
+      setChecked(!checked);
+      setTimeout(() => {
+        setChecked(false);
+      }, 1000);
     }
-    setQuestionNum((prev) => prev + 1);
   };
   const twoBtn2Click = () => {
-    if (questionNum < 4) {
-      setCareNum((prev) => prev + 1);
-    } else if (questionNum < 10 && questionNum >= 4) {
-      setExpNum((prev) => prev + 1);
+    if (checked === false) {
+      if (questionNum < 4) {
+        setCareNum((prev) => prev + 1);
+      } else if (questionNum < 10 && questionNum >= 4) {
+        setExpNum((prev) => prev + 1);
+      }
+      setQuestionNum((prev) => prev + 1);
+      setChecked(!checked);
+      setTimeout(() => {
+        setChecked(false);
+      }, 1000);
     }
-    setQuestionNum((prev) => prev + 1);
   };
   // 4지선다 버튼 함수
   const fousrBtn1Click = () => {
-    if (questionNum === 15) {
-      careNum > 0
-        ? setResult((prev) => prev + "C")
-        : setResult((prev) => prev + "D");
-      expNum > 3
-        ? setResult((prev) => prev + "P")
-        : setResult((prev) => prev + "N");
-      envNum > 9
-        ? setResult((prev) => prev + "G")
-        : setResult((prev) => prev + "B");
-      navigate("/result");
-    } else {
-      setEnvNum((prev) => prev);
-      setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      if (questionNum === 15) {
+        careNum > 0
+          ? setResult((prev) => prev + "C")
+          : setResult((prev) => prev + "D");
+        expNum > 3
+          ? setResult((prev) => prev + "P")
+          : setResult((prev) => prev + "N");
+        envNum > 9
+          ? setResult((prev) => prev + "G")
+          : setResult((prev) => prev + "B");
+        setChecked(!checked);
+        navigate("/result");
+      } else {
+        setEnvNum((prev) => prev);
+        setQuestionNum((prev) => prev + 1);
+        setChecked(!checked);
+        setTimeout(() => {
+          setChecked(false);
+        }, 1000);
+      }
     }
   };
   const fousrBtn2Click = () => {
-    if (questionNum === 15) {
-      careNum > 0
-        ? setResult((prev) => prev + "C")
-        : setResult((prev) => prev + "D");
-      expNum > 3
-        ? setResult((prev) => prev + "P")
-        : setResult((prev) => prev + "N");
-      envNum > 9
-        ? setResult((prev) => prev + "G")
-        : setResult((prev) => prev + "B");
-      navigate("/result");
-    } else {
-      setEnvNum((prev) => prev + 1);
-      setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      if (questionNum === 15) {
+        careNum > 0
+          ? setResult((prev) => prev + "C")
+          : setResult((prev) => prev + "D");
+        expNum > 3
+          ? setResult((prev) => prev + "P")
+          : setResult((prev) => prev + "N");
+        envNum > 9
+          ? setResult((prev) => prev + "G")
+          : setResult((prev) => prev + "B");
+        setChecked(!checked);
+        navigate("/result");
+      } else {
+        setEnvNum((prev) => prev + 1);
+        setQuestionNum((prev) => prev + 1);
+        setChecked(!checked);
+        setTimeout(() => {
+          setChecked(false);
+        }, 1000);
+      }
     }
   };
   const fousrBtn3Click = () => {
-    if (questionNum === 15) {
-      careNum > 0
-        ? setResult((prev) => prev + "C")
-        : setResult((prev) => prev + "D");
-      expNum > 3
-        ? setResult((prev) => prev + "P")
-        : setResult((prev) => prev + "N");
-      envNum > 9
-        ? setResult((prev) => prev + "G")
-        : setResult((prev) => prev + "B");
-      navigate("/result");
-    } else {
-      setEnvNum((prev) => prev + 2);
-      setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      if (questionNum === 15) {
+        careNum > 0
+          ? setResult((prev) => prev + "C")
+          : setResult((prev) => prev + "D");
+        expNum > 3
+          ? setResult((prev) => prev + "P")
+          : setResult((prev) => prev + "N");
+        envNum > 9
+          ? setResult((prev) => prev + "G")
+          : setResult((prev) => prev + "B");
+        setChecked(!checked);
+        navigate("/result");
+      } else {
+        setEnvNum((prev) => prev + 2);
+        setQuestionNum((prev) => prev + 1);
+        setChecked(!checked);
+        setTimeout(() => {
+          setChecked(false);
+        }, 1000);
+      }
     }
   };
   const fousrBtn4Click = () => {
-    if (questionNum === 15) {
-      careNum > 0
-        ? setResult((prev) => prev + "C")
-        : setResult((prev) => prev + "D");
-      expNum > 3
-        ? setResult((prev) => prev + "P")
-        : setResult((prev) => prev + "N");
-      envNum > 9
-        ? setResult((prev) => prev + "G")
-        : setResult((prev) => prev + "B");
-      navigate("/result");
-    } else {
-      setEnvNum((prev) => prev + 3);
-      setQuestionNum((prev) => prev + 1);
+    if (checked === false) {
+      if (questionNum === 15) {
+        careNum > 0
+          ? setResult((prev) => prev + "C")
+          : setResult((prev) => prev + "D");
+        expNum > 3
+          ? setResult((prev) => prev + "P")
+          : setResult((prev) => prev + "N");
+        envNum > 9
+          ? setResult((prev) => prev + "G")
+          : setResult((prev) => prev + "B");
+        setChecked(!checked);
+        navigate("/result");
+      } else {
+        setEnvNum((prev) => prev + 3);
+        setQuestionNum((prev) => prev + 1);
+        setChecked(!checked);
+        setTimeout(() => {
+          setChecked(false);
+        }, 1000);
+      }
     }
   };
+  console.log(result);
   return (
     <Wrapper
       key={questionNum}
